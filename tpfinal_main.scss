@@ -1,0 +1,64 @@
+// Importer les variables
+@import 'tpfinal_variables.scss';
+
+// Style global
+body {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+// Style de base pour les conteneurs
+.container {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-medium;
+}
+
+// Styles de titres
+h1, h2 {
+    color: $primary-color;
+    text-align: center;
+}
+
+// Styles de liens
+a {
+    color: $secondary-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: darken($secondary-color, 10%);
+    }
+}
+
+// Styles de sections
+.section {
+    padding: $spacing-large 0;
+    
+    &__title {
+        margin-bottom: $spacing-medium;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: $primary-color;
+        }
+    }
+}
+
+// Responsive
+@media screen and (max-width: $mobile-width) {
+    .container {
+        padding: 0 $spacing-small;
+    }
+}
